@@ -1,0 +1,28 @@
+.btnWrapper{
+    display:flex;
+    justify-content: center;
+}
+.btn{
+    width:224px;
+    height:42px;
+    border:none;
+    border-radius: 50px;
+    outline: none;
+    background-color:#9944e8;
+    color:white;
+    font-weight: bold;
+    font-size:0.9rem;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover{
+    background-color: #530a96;   
+}
+.arrow{
+    margin-left:10px;
+}
