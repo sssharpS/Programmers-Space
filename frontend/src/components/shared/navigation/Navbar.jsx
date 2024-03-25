@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className={`${styles.navbar} container`}>
 
-        <Link style={imgStyle}>
+        <Link style={imgStyle} to='/'>
          <img src='/images/logo.png' alt='Not loaded' style={{height:'40px '}}/>
          <span style={{marginLeft:'15px'}}>ProgrammersSpace</span>
        </Link>

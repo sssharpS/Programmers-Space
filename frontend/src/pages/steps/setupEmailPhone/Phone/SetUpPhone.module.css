@@ -1,0 +1,45 @@
+.imgWrapper{
+    margin-top: -5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.btn{
+    background-color: #262626;
+    border-radius: 5px;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    margin:3px;
+}
+.img{
+    width:30px;
+    height:30px;
+}
+.phn{
+    width:290px;
+    margin:0px auto;
+    margin-top:70px;
+    display: flex;
+    background-color: #262626;
+    border-radius: 10px;
+}
+.imgStyle{
+    height:25px;
+    margin:8px;   
+}
+.input{
+    border:none;
+    outline:none;
+    padding:10px;
+    background-color:#262626 ;
+
+}
+.Para{
+    color:#C4C5C5;
+    text-align: center;
+    margin-top:25px;
+}
+.active{
+    background-color: blue;
+}

@@ -2,18 +2,18 @@ import React from "react";
 import styles from "./Card.module.css";
 
 
-const Card = ({children}) => {
+const Card = ({title,image,children}) => {
     
   return (
     <div className={styles.card}>
       <div className={styles.content}>
         <div className={styles.header}>
           <img
-            src="/images/logo.png"
+            src={image}
             alt="Not loaded"
             style={{ height: "30px " }}
           ></img>
-          <span style={{marginLeft:'10px'}}>Welcome To ProgrammersSpace!</span>
+          <span style={{marginLeft:'10px'}}>{title}</span>
         </div>
         {children}
       </div>
