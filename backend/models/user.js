@@ -5,8 +5,14 @@ const userSchema=new mongoose.Schema({
         type:String,required:true
     },
     isActivate:{
-        type:String,required:true,default:"false"
+        type:Boolean,required:true,default:"false"
     },
+    name:{
+        type:String,default:""
+    },
+    avatar:{
+        type:String,default:""
+    }
 },{
     timestamps:true
 });

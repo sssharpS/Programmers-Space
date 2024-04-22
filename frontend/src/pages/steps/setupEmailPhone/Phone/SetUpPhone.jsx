@@ -17,7 +17,9 @@ const dispatch=useDispatch();
 
 
   async function handleRequest(){
-
+         if(!phone){
+          return ;
+         }
         const {data}=await sendOtp({phone});
          console.log(data);
          dispatch(setOtp(data));
@@ -42,7 +44,7 @@ const dispatch=useDispatch();
             type="text"
             className={Styles.input}
             placeholder="+91 9123344555"
-          value={phone} onChange={(e)=>setPhone(e.target.value)} />
+          value={phone} onChange={(e)=>setPhone(e.target.value)}/>
         </div>
 
         <Button handleClick={handleRequest} text={btnText}/>

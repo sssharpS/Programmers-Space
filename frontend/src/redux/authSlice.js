@@ -15,10 +15,17 @@ const authSlice=createSlice({
     name:'authReducer',
     initialState,
     reducers:{
-      setAuth:(state,action)=>{
+      setAuth:(state,action)=>{ 
        const {user}=action.payload;
+      //  console.log(user);
+        if(user==null){
+          state.isAuth=false;
+          state.user=user;
+        }
+        else{
          state.isAuth=true;
          state.user=user;
+        }
       },
        setOtp:(state,action)=>{
         

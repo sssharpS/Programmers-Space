@@ -8,12 +8,13 @@ const Card = ({title,image,children}) => {
     <div className={styles.card}>
       <div className={styles.content}>
         <div className={styles.header}>
-          <img
+          {/* use short circuit */}
+          {image && <img
             src={image}
             alt="Not loaded"
             style={{ height: "30px " }}
-          ></img>
-          <span style={{marginLeft:'10px'}}>{title}</span>
+          ></img>}
+          {title && <span style={{marginLeft:'10px'}}>{title}</span>}
         </div>
         {children}
       </div>

@@ -4,7 +4,9 @@ import Button from '../../../components/shared/button/Button';
 import styles from './SetUpOtp.module.css';
 import { useState } from 'react';
 import { verifyOtp } from '../../../http/index';
-import {useSelector} from 'react-redux';
+import {useSelector,useDispatch} from 'react-redux';
+import {useNavigate} from 'react-router-dom';
+import { setAuth } from '../../../redux/authSlice';
 
 const SetUpOtp = ({nextStep}) => {
   const image='/images/otp.png';
@@ -15,13 +17,25 @@ const SetUpOtp = ({nextStep}) => {
    const {phone,hash}=useSelector((state)=>state.authSlice.otp);
 
    const [otp,setOtp]=useState('');
+   const navigate=useNavigate();
+   const dispatch=useDispatch();
 
 
    const handleSubmit=async()=>{
 
-
-     const data= await verifyOtp({otp,phone,hash});
+    if(!otp || !phone || !hash){
+      return ;
+    }
+    try{
+     const {data}=await verifyOtp({otp,phone,hash});
      console.log(data);
+     if(data){
+         dispatch(setAuth(data));
+     } 
+    navigate('/activate');
+    }catch(err){
+      return ;
+    }
 
    }
 

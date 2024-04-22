@@ -3,7 +3,17 @@ const app=express();
 require('dotenv').config();
 const port=5500;
  const cors = require('cors');
- app.use(cors());
+ const cookieParser= require('cookie-parser');
+ 
+ app.use(cookieParser());
+
+
+ const corOptions={
+    credentials:true,//send cookie at server side
+    origin:['http://localhost:3000'],
+ }
+
+ app.use(cors(corOptions));
  const mongoose= require('./config/mongoose');
 //  mongoose.main();
 
