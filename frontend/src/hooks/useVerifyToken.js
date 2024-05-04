@@ -2,6 +2,8 @@ import {useState,useEffect} from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setAuth } from "../redux/authSlice";
+import { setAvatar } from "../redux/userSlice";
+import { setUsername } from "../redux/userSlice";
 
 export function useVerifyToken(){
     const [loading,setLoading]=useState(true);
@@ -15,6 +17,8 @@ export function useVerifyToken(){
         withCredentials:true
       });
         dispatch(setAuth(data));
+        dispatch(setAvatar(data.user));
+        dispatch(setUsername(data.user));
          setLoading(false);
       }catch(err){
         // console.log(err);  

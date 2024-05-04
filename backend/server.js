@@ -5,6 +5,7 @@ const port=5500;
  const cors = require('cors');
  const cookieParser= require('cookie-parser');
  
+ app.use('/assets',express.static('assets'));
  app.use(cookieParser());
 
 

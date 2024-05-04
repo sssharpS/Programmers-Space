@@ -1,8 +1,14 @@
+const path=require('path');
 const User=require('../models/user');
 
 module.exports.activateUser=async(req,res)=>{
     
-    const {img,name}=req.body;
+    let {img,name}=req.body;
+     let rem='blob:http://localhost:3000/'
+      if(img.startsWith(rem)){
+         img=img.substring(rem.length);
+      }
+      img=`/assets/${img}`;
     let user;
     try{
     user=await User.findOneAndUpdate(req.user._id,{avatar:img,name,isActivate:true},{new:true});

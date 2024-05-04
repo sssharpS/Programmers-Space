@@ -21,7 +21,8 @@ const SetAvatar = ({handleClick}) => {
   const btntext='Next';
 
 
-  const [img,setImg]=useState(useSelector((state)=>state.userSlice.avatar));
+
+  const [img,setImg]=useState('/images/avatar-img.png');
   const inputRef=useRef(null);
 
 

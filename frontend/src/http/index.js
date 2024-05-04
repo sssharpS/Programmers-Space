@@ -27,7 +27,16 @@ export const activateUser=(data)=>{
 }
 
 export const logOut=(data)=>{
-    return api.post('api/logout',data);
+    return api.post('/api/logout',data);
+}
+
+export const fectchRooms=()=>{
+     return api.get('/api/rooms');
+}
+
+
+export const createRoom=(data)=>{
+    return api.post('/api/create-room',data);
 }
 
 

@@ -1,0 +1,92 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.closeWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.closeWrap button {
+  background-color: #1d1d1d;
+  cursor: pointer;
+}
+.modalWrapper {
+  width: 500px;
+  height: 493px;
+  background: #1d1d1d;
+  border-radius: 20px;
+  padding: 30px;
+}
+.txt {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30.01px;
+}
+.inp {
+  width: 470px;
+  height: 30px;
+  background: #262626;
+  font-size: 18px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.roomTypeWrapper {
+  margin: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.imgBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  background: #1d1d1d;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.txtWrap {
+  margin: 50px 0px;
+  text-align: center;
+}
+
+.btn {
+  width: 179px;
+  height: 42px;
+  border-radius: 50px;
+  background: #20bd5f;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #074c23;
+}
+
+.btnTxt {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24.45px;
+  color: #ffffff;
+}
+
+.active{
+  background: #262626;
+  border-radius: 10px;
+}

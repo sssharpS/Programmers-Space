@@ -1,0 +1,71 @@
+.roomsWrapper{
+    width:299px;
+    height:190px;
+    background: #1D1D1D;
+    border-radius:20px;
+    margin:12px;
+    padding: 30px;
+    cursor:pointer;
+    
+}
+
+.heading{
+    width:256px;
+    height:56px;
+    font-size: 18px;
+  font-weight: 700;
+  line-height: 24.55px;
+  text-align: left;
+
+}
+
+.wrapper{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top:25px;
+    position:relative
+}
+
+.avatarWrapper img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #1d1d1d;
+}
+
+.avatarWrapper img:last-child{
+    top:20px;
+    left:20px;
+    border:2px solid 
+}
+
+.nameWrapper{
+  width:100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.spkrs{
+font-size: 18px;
+font-weight: 500;
+line-height: 21.82px;
+text-align: center;
+
+}
+
+.contWrapper{
+    margin-top:20px;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    color:#C4C5C5;
+    font-weight:600;
+}
+
+

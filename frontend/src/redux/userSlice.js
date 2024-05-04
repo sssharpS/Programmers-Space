@@ -4,7 +4,7 @@ import { useReducer } from "react";
 
 const initialState={
     name:'',
-    avatar:'/images/avatar-img.png',
+    avatar:'',
 }
 
 

@@ -6,3 +6,28 @@
    align-items: center;
    justify-content: space-between;
 }
+
+.rightWrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Wrapper{
+   display: flex;
+   align-items: center;
+}
+
+.img{
+   height:50px;
+   width:60px;
+   margin-left:10px;
+   border:2px solid blue;
+   outline: none;
+   border-radius:50%;
+   object-fit: cover;
+
+}
+.btn{
+   background:#121212;
+   cursor:pointer;
+}

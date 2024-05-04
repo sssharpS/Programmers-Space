@@ -8,6 +8,7 @@ import Activate from './pages/Activate/Activate';
 import Rooms from './pages/Rooms/Rooms';
 import { useSelector } from 'react-redux';
 import { useVerifyToken } from './hooks/useVerifyToken';
+import Room from './pages/Room/Room';
 
 
 
@@ -27,6 +28,7 @@ function App() {
              <Route path='/authenticate' element={<GuestRoute><Authenticate /></GuestRoute>}/>
              <Route path='/activate' element={<SemiProtectedRoute><Activate/></SemiProtectedRoute>}/>
              <Route path='/rooms' element={<ProtectedRoute><Rooms/></ProtectedRoute>}/>
+             <Route path='/rooms/:id' element={<ProtectedRoute><Room /></ProtectedRoute>}/>
           </Routes>
         </Router>
     </div>
