@@ -8,7 +8,7 @@ import Button from '../../../components/shared/button/Button';
 import { activateUser } from '../../../http';
 import { useNavigate } from 'react-router-dom';
 import { setAuth } from '../../../redux/authSlice';
-import  {setAvatar} from '../../../redux/userSlice'
+import  {setAvatar} from '../../../redux/userSlice';
 
 const SetAvatar = ({handleClick}) => {
   const image='/images/avatar.png';
@@ -22,7 +22,7 @@ const SetAvatar = ({handleClick}) => {
 
 
 
-  const [img,setImg]=useState('/images/avatar-img.png');
+  const [img,setImg]=useState('');
   const inputRef=useRef(null);
 
 
@@ -30,10 +30,12 @@ const SetAvatar = ({handleClick}) => {
     const file=e.target.files[0];
     //make url
     if(file){
-      const url=URL.createObjectURL(file);
-      console.log(url);
-      setImg(url);
-      dispatch(setAvatar({avatar:img}));
+      const reader=new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend=function(){
+         setImg(reader.result);
+        //  dispatch(setAvatar({avatar:img}));
+      }
     }
   }
   const changeAvatar=()=>{
@@ -41,10 +43,15 @@ const SetAvatar = ({handleClick}) => {
   }
   
   const handleNext=async()=>{
+     if(!img){
+      return ;
+     }
       handleClick();
     try{  
+      // console.log(name+" " +img);
       const {data}=await activateUser({name,img});
       dispatch(setAuth(data));
+      dispatch(setAvatar(data.user));
       navigate('/rooms');
     }catch(err){
       return ;
@@ -60,7 +67,7 @@ const SetAvatar = ({handleClick}) => {
         <div className={Styles.imgWrapper}>
 
         <span className={Styles.text}>How's this Photo?</span>
-     <img src={img} alt='not Loaded' className={Styles.img}/>
+     <img src={!img?'/images/avatar-img.png':img} alt='not Loaded' className={Styles.img}/>
        <button className={Styles.btn} onClick={changeAvatar}>Choose a different Photo</button>
 
        <div style={{display:'none'}}>

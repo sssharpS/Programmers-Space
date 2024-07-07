@@ -1,0 +1,91 @@
+.header{
+    width:80%;
+    margin:10px auto;
+}
+
+.back{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+.speakers{
+    width:100%;
+    min-height: calc(100vh - 200px);
+    background-color: #1d1d1d;   
+    margin-top:40px;
+    border-top-left-radius: 50px;
+    border-top-right-radius:50px;
+}
+.topic{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding:15px 50px;
+}
+
+.btnleave{
+    width:180px;
+    height:42px;
+    background-color:Placeholder;
+    border-radius: 50px;
+    background-color:#262626;
+    display:flex;
+    align-items:center;
+    justify-content:space-evenly;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    
+}
+.btnleave:hover{
+    background-color:#333333;
+}
+.topic p{
+    font-size:1.2rem;
+    font-weight: bolder;
+}
+.btnleave span{
+    color:white;
+    font-size:1rem;
+}
+
+.clients{
+    padding:20px;
+}
+.clientsWrap{
+    display:flex;
+    align-items: center;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    gap:30px;
+}
+.clientContainer{
+    height:140px;
+    width:100px;
+   display:flex;
+   flex-direction:column;
+   justify-content:space-between;
+   align-items: center;
+   position: relative;
+}
+.clientContainer :first-child{
+   height:100px;
+   width:100px;
+  border:3px solid blue;
+  outline:none;
+  border-radius: 50%;
+  position: relative;
+}
+.clientContainer span{
+    font-size:1.2rem;
+    font-weight: bolder;
+}
+
+.micbtn{
+    background: none;
+    position:absolute;
+    cursor:pointer;
+    bottom:30px;
+    right:0px;
+    
+}

@@ -3,7 +3,9 @@ const Room=require('../models/room');
 module.exports.fetchRooms=async(req,res)=>{
      let rooms;
         try{
-        rooms=await Room.find({});
+        rooms=await Room.find({}).populate('speakers')
+        .populate('ownerId')
+        .exec();
         }catch(err){
           return res.status(401).json({message:'Something Went wrong'});
         }
@@ -23,7 +25,7 @@ module.exports.createRooms=async(req,res)=>{
        topic,
        roomType:type,
        ownerId:req.user._id, 
-       speakers:[...speakers,ownerId]
+      speakers:[req.user._id]
     }).save();
     return res.json({room});    
 }catch(err){

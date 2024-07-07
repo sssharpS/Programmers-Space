@@ -4,6 +4,7 @@ import { useState ,useCallback,useRef,useEffect} from "react"
 export const useStateWithCallback=(initState)=>{
   
   const [state,setState]=useState(initState);
+
     const cbRef=useRef(null);
 
         const updateState=useCallback((newState,cb)=>{
@@ -19,7 +20,6 @@ export const useStateWithCallback=(initState)=>{
       cbRef.current(state);
       cbRef.current=null;
      }
-     console.log('a');
     },[state]);
 
         return [state,updateState];

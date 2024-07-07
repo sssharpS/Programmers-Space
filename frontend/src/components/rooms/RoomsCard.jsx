@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const RoomsCard = ({room}) => {
 
+  // console.log(room);
   const navigate=useNavigate();
   const handleClick=()=>{
     navigate(`/rooms/${room._id}`);
@@ -16,13 +17,13 @@ const RoomsCard = ({room}) => {
       <div className={styles.wrapper}>
       <div className={styles.avatarWrapper}>
         {room.speakers.map((speaker)=>{
-            return <img src={speaker.avatar} alt='Not Loaded' key={speaker.id} className={styles.imgStyle}/>
+            return <img key={speaker._id} src={speaker.avatar} alt='Not Loaded' className={styles.imgStyle}/>
         })}
       </div>
       <div>
         {room.speakers.map((speaker)=>{
            return (
-            <div key={speaker.id} className={styles.nameWrapper}>
+            <div key={speaker._id}className={styles.nameWrapper}>
               <span className={styles.spkrs}>{speaker.name}</span>
               <img src='/images/message.png' alt='Not loaded'/>
             </div>

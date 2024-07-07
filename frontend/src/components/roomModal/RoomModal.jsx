@@ -2,22 +2,31 @@ import React from 'react';
 import styles from './RoomModal.module.css';
 import { useState } from 'react';
 import { createRoom } from '../../http';
+import { useNavigate } from 'react-router-dom';
 
 
 const RoomModal = ({handleCancel}) => {
 
+
   const [topic,setTopic]=useState('');
   const [type,setType]=useState('open');
+
+  const navigate=useNavigate();
 
 
   const handleClick=async()=>{
 
      try{
      const {data}= await createRoom({topic,type});
-     console.log(data.room);
+     console.log(data);
+     const room=data.room;
+     handleCancel();
+     navigate(`/rooms/${room._id}`);
+     
        
      }catch(err){
       console.log(err.message);
+      return ;
      }
 
   }

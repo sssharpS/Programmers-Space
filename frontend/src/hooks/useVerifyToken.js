@@ -21,7 +21,7 @@ export function useVerifyToken(){
         dispatch(setUsername(data.user));
          setLoading(false);
       }catch(err){
-        // console.log(err);  
+          
         setLoading(false);
       }
     })()

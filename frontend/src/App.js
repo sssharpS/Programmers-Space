@@ -9,6 +9,8 @@ import Rooms from './pages/Rooms/Rooms';
 import { useSelector } from 'react-redux';
 import { useVerifyToken } from './hooks/useVerifyToken';
 import Room from './pages/Room/Room';
+import { Toaster } from 'react-hot-toast';
+import Profile from './pages/Profile/Profile';
 
 
 
@@ -21,6 +23,7 @@ function App() {
 
   return loading?<></>:(
     <div>
+      <Toaster />
         <Router>
            <Navbar />
           <Routes>
@@ -29,6 +32,7 @@ function App() {
              <Route path='/activate' element={<SemiProtectedRoute><Activate/></SemiProtectedRoute>}/>
              <Route path='/rooms' element={<ProtectedRoute><Rooms/></ProtectedRoute>}/>
              <Route path='/rooms/:id' element={<ProtectedRoute><Room /></ProtectedRoute>}/>
+             <Route path='/profile' element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           </Routes>
         </Router>
     </div>

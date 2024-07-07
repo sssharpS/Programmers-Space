@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { useSelector } from "react-redux";
 import { logOut } from "../../../http";
@@ -18,6 +18,7 @@ const Navbar = () => {
     alignItems: "center",
   };
 
+  const navigate=useNavigate();
   const { isAuth, user } = useSelector((state) => state.authSlice);
   const dispatch = useDispatch();
 
@@ -44,7 +45,10 @@ const Navbar = () => {
       {isAuth && user.isActivate && (
         <div className={styles.wrapper}>
           <span style={{fontWeight:'bold',fontSize:'20px'}}>{name}</span>
+          <button style={{background:'none',cursor:'pointer'}} onClick={()=>navigate('/profile')}>
           <img src={!avatar?'/images/avatar-img.png':avatar} alt="Not loaded" className={styles.img} />
+          </button>
+          
         </div>
       )}
       <div>

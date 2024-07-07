@@ -17,6 +17,9 @@ export const sendOtp=(data)=>{
     return api.post('/api/send-otp',data)
 };
 
+export const sendOtpViaEmail=(data)=>{
+    return api.post('/api/send-otpEmail',data);
+}
 export const verifyOtp=(data)=>{
    return api.post('/api/verify-otp',data);
 }
@@ -39,6 +42,9 @@ export const createRoom=(data)=>{
     return api.post('/api/create-room',data);
 }
 
+export const deleteAccount=(data)=>{
+    return api.post('/api/deleteAccount',data);
+}
 
 
 

@@ -10,6 +10,7 @@ const roomSchema=new mongoose.Schema({
     },
     ownerId:{
         type:mongoose.SchemaTypes.ObjectId,ref:'User',
+        required:true
     },
 
     speakers:{
@@ -18,7 +19,7 @@ const roomSchema=new mongoose.Schema({
               ref:'User',
             }
         ],
-        required:false
+        required:true,
     }
 
 },{timestamps:true});

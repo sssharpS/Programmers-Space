@@ -27,7 +27,7 @@ const Home = () => {
         </p>
        <Button handleClick={handleClick} text={btntext}/>
        <div className={styles.signIn}>
-         <span>Have an invite text</span>
+         {/* <span>Have an invite text</span> */}
          {/* <Link to='/Login'  className={styles.signinlink}>Sign in</Link> */}
          
        </div>

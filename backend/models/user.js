@@ -2,7 +2,10 @@ const mongoose=require('mongoose');
 
 const userSchema=new mongoose.Schema({
     phone:{
-        type:String,required:true
+        type:String,required:false,
+    },
+    email:{
+        type:String,required:false,
     },
     isActivate:{
         type:Boolean,required:true,default:"false"

@@ -1,0 +1,100 @@
+.profile{
+    height:600px;
+    width:550px;
+    margin:0 auto;
+
+}
+.header{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding:20px 0px;
+}
+.imgWrapper{
+  height:40px;
+  width:40px;
+  background-color:#262626;
+  border-radius:50px;
+  cursor:pointer;
+}
+
+.para{
+    margin-left:25px;
+    font-size:1.3rem;
+    font-weight: bolder;
+}
+
+.info{
+   border-top:1px solid whitesmoke;
+}
+
+.profileWrapper{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  /* position: relative; */
+  
+}
+
+.profileImg{
+  height:100px;
+  width:100px;
+  border:2px solid yellow;
+  border-radius: 50%;
+  margin:0 auto;
+ 
+}
+
+.editContainer{
+    height:40px;
+    width:100px;
+    position:relative;
+    left:170px;
+    bottom:20px;
+    display:flex;
+    justify-content: space-around;  
+    align-items: center;
+    font-size:1.2rem;
+    font-weight:bolder;
+    border: 2px solid yellow;
+    border-radius:10px;      
+}
+
+.personalInfo{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:20px;
+}
+.person{
+  width:240px;
+  height:40px;
+  border:1px solid white;
+  border-radius: 10px;
+  display:flex;
+  align-items: center;
+
+
+}
+
+.savebtn{
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  margin-top:-30px;
+}
+
+.deleteInfo{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content:space-evenly;
+}
+
+.deletebtn{
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  margin-top:-40px;
+}
