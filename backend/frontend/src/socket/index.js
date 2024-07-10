@@ -8,7 +8,7 @@ const socketInit=()=>{
         transports:['websocket'],
         
     }
-    return io(process.env.REACT_APP_BASE_ADDRESS,options);
+    return io(`${window.location.origin}`,options);
 }
 
 

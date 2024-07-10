@@ -52,7 +52,7 @@ module.exports.activateUser = async (req, res) => {
     );
     //  console.log(user);
   } catch (err) {
-    res.staus(400).json({ message: "Invalid Credentails" });
+   return res.staus(400).json({ message: "Invalid Credentails" });
   }
 
   return res.json({ user });

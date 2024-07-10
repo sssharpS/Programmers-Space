@@ -6,6 +6,7 @@ require("dotenv").config();
 const port = 5500;
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const path=require('path');
 
 
 app.use('/assets', express.static('assets'));
@@ -30,6 +31,10 @@ module.exports=server;
 require('./socket');
 
 // here we are using api's of express for listening the reqests but now we use nodejs server
+app.get('/',(req,res)=>{
+  app.use(express.static(path.resolve(__dirname,"frontend","build")));
+  res.sendFile(path.resolve(__dirname,"frontend","build","index.html"));
+})
 server.listen(port, () => {
   console.log(`server is running and listen at port:${port}`);
 });
